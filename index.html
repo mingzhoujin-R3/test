@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Results Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Simulation Results Dashboard</h1>
+            <p class="subtitle">Real-time Performance Metrics</p>
+        </header>
+
+        <div class="controls">
+            <button id="runSimBtn" class="btn btn-primary">Run Simulation</button>
+            <button id="resetBtn" class="btn btn-secondary">Reset</button>
+            <select id="simulationType">
+                <option value="physics">Physics Simulation</option>
+                <option value="network">Network Simulation</option>
+                <option value="financial">Financial Simulation</option>
+            </select>
+        </div>
+
+        <div class="results-grid">
+            <div class="card">
+                <h2>Execution Time</h2>
+                <div class="metric-value" id="execTime">0 ms</div>
+                <div class="metric-bar">
+                    <div class="progress" id="execTimeBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Success Rate</h2>
+                <div class="metric-value" id="successRate">0%</div>
+                <div class="metric-bar">
+                    <div class="progress success" id="successBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Total Iterations</h2>
+                <div class="metric-value" id="iterations">0</div>
+                <div class="metric-bar">
+                    <div class="progress info" id="iterBar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Performance Score</h2>
+                <div class="metric-value" id="perfScore">0</div>
+                <div class="metric-bar">
+                    <div class="progress warning" id="scoreBar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Results Over Time</h2>
+            <canvas id="resultsChart" width="400" height="200"></canvas>
+        </div>
+
+        <div class="table-container">
+            <h2>Detailed Results</h2>
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Iteration</th>
+                        <th>Status</th>
+                        <th>Value</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>© 2026 Simulation Results Dashboard | Last Updated: <span id="lastUpdated">Never</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
